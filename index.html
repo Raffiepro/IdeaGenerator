@@ -7,11 +7,11 @@
 <script>
 
 function maker(){
-    location.href = "Idea%20generator%20%online/idea%20generator"
-}
+    location.href = "editor";
+};
 
-var button = document.getElementById("generate")
-button.addEventListener("click", generate)
+var button = document.getElementById("generate");
+button.addEventListener("click", generate);
 
 var objects = ["banana", "potato", "man", "woman", "lady", "gentleman", "horse", "furry", "computer", "phone", "sheep", "monster", "penguin", "cat", "dog", "parrot", "monkey", "guy wearing pijamas", "pair of shorts", "devil"];
 var object_descriptors = [" chinese", " russian", " dutch", "n english", " british", "n irish", " polish", " crazy", " mad", " sleepy", " dead", " dying", " stupid-looking", " timid"];
@@ -30,7 +30,7 @@ function generate()
 
     var idea = "A" + random_object_descriptor + " " + random_object + " " + random_object_action + " a" + random_object_descriptor2 + " " + random_object2 + " in" + random_place;
     document.getElementById("idea").innerHTML = "<code>"+ idea +"</code>";
-}
+};
 
 
 </script>
