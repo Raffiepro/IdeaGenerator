@@ -8,12 +8,12 @@ function bodyLoaded()
         document.getElementById("descriptors").value = properties[1].replaceAll("%20", " ");
         document.getElementById("actions").value = properties[2].replaceAll("%20", " ");
         document.getElementById("places").value = properties[3].replaceAll("%20", " ");
-    }
-}
+    };
+};
 
 
-var button = document.getElementById("generate")
-button.addEventListener("click", generate)
+var button = document.getElementById("generate");
+button.addEventListener("click", generate);
 
 //Idea generating
 function generate()
@@ -33,7 +33,7 @@ function generate()
 
     var idea = "A" + random_object_descriptor + " " + random_object + " " + random_object_action + " a" + random_object_descriptor2 + " " + random_object2 + " in" + random_place;
     document.getElementById("idea").innerHTML = "<code>"+ idea +"</code>";
-}
+};
 
 function share()
 {
@@ -45,6 +45,7 @@ function share()
     var places = document.getElementById("places").value;
 
     var link = location.href.replace(location.search, "") + "?" + objects + "&" + object_descriptors + "&" + object_actions + "&" + places;
+    link = link.replaceAll(" ", "%20");
 
     shareLink.innerText = link;
-}
+};
