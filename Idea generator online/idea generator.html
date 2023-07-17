@@ -1,0 +1,51 @@
+<html>
+
+<body onload="bodyLoaded()">
+
+
+<h1 id="idea"><code>Press that really cool button under me! Go ahead!</code></h1>
+<button id="generate"><code>Generate idea</code></button>
+
+
+<br>
+<br>
+
+
+Objects: <input type="text" id="objects" title="Objects">
+<br><br>
+Descriptors: <input type="text" id="descriptors" title="Descriptors">
+<br><br>
+Actions: <input type="text" id="actions" title="Actions">
+<br><br>
+Places: <input type="text" id="places" title="Places">
+<br><br>
+
+<h2><code><p id="rating">Idea generator rating: ?</p></code></h2>
+
+<button id="share" onclick="share()">Share</button>
+<br>
+
+<h2><code id="shareLink"></code></h2>
+
+
+<script src="idea_generator.js"></script>
+
+<script>
+    document.getElementById("generate").addEventListener("click", calculate_rating)
+
+    function calculate_rating(){
+        var objects_rating = document.getElementById("objects").value.split(",").length / 20.0;
+        var descriptors_rating = document.getElementById("descriptors").value.split(",").length / 20.0;
+        var actions_rating = document.getElementById("actions").value.split(",").length / 20.0;
+        var places_rating = document.getElementById("places").value.split(",").length / 20.0;
+
+        var overall_rating = (((objects_rating + descriptors_rating + actions_rating + places_rating) / 4.0) * 100) - 5;
+
+        document.getElementById("rating").innerHTML = "Idea generator rating: " + overall_rating;
+    }
+</script>
+
+
+</body>
+
+</html>
