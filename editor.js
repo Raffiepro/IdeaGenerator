@@ -1,5 +1,7 @@
 function bodyLoaded()
 {
+    document.getElementById("username").value = "Random Guy";
+
     if (location.href.includes("?"))
     {
         const properties = location.href.split("?")[1].split("&");
@@ -50,6 +52,10 @@ function share()
     shareLink.innerText = link;
 };
 
+
+var ID = Math.floor(Math.random() * 999999)
+
+
 function publish()
 {
     var objects = document.getElementById("objects").value;
@@ -67,7 +73,7 @@ function publish()
     request.setRequestHeader("Content-type", "application/json");
 
     const params = {
-        username: "Custom Idea Generators!",
+        username: document.getElementById("username").value + " (" + ID + ")",
         avatar_url: "https://raw.githubusercontent.com/Raffiepro/IdeaGenerator/main/pfp.jpg",
         content: link
     };
