@@ -72,10 +72,19 @@ function publish()
 
     request.setRequestHeader("Content-type", "application/json");
 
+    const embed = {
+        author: {
+            name: document.getElementById("username").value + " (" + ID + ")",
+        },
+        title: document.getElementById("title").value,
+        url: link,
+        description: "An EPIC random idea generator by " + document.getElementById("username").value + " (" + ID + ")",
+    }
+
     const params = {
         username: document.getElementById("username").value + " (" + ID + ")",
         avatar_url: "https://raw.githubusercontent.com/Raffiepro/IdeaGenerator/main/pfp.jpg",
-        content: link
+        embeds: [embed]
     };
     
     request.send(JSON.stringify(params));
