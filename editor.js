@@ -90,7 +90,7 @@ function publish()
     };
     
     console.log(JSON.stringify(params));
-    //request.send(JSON.stringify(params));
+    request.send(JSON.stringify(params));
 
 
     document.getElementById("published").innerText = "Published to https://discord.gg/CTNEqcgV!";
