@@ -40,14 +40,14 @@ Places: <input type="text" id="places" title="Places" value=" Hello, World">
     document.getElementById("generate").addEventListener("click", calculate_rating)
 
     function calculate_rating(){
-        var objects_rating = document.getElementById("objects").value.split(",").length / 20.0;
-        var descriptors_rating = document.getElementById("descriptors").value.split(",").length / 20.0;
-        var actions_rating = document.getElementById("actions").value.split(",").length / 20.0;
-        var places_rating = document.getElementById("places").value.split(",").length / 20.0;
+        var objects_rating = document.getElementById("objects").value.split(",").length;
+        var descriptors_rating = document.getElementById("descriptors").value.split(",").length;
+        var actions_rating = document.getElementById("actions").value.split(",").length;
+        var places_rating = document.getElementById("places").value.split(",").length;
 
-        var overall_rating = (((objects_rating + descriptors_rating + actions_rating + places_rating) / 4.0) * 100) - 5;
+        var overall_rating = descriptors_rating*objects_rating * descriptors_rating*objects_rating * actions_rating * places_rating
 
-        document.getElementById("rating").innerHTML = "Idea generator rating: " + overall_rating;
+        document.getElementById("rating").innerHTML = "Can generate " + overall_rating + " original ideas";
     }
 </script>
 
