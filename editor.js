@@ -35,6 +35,8 @@ function generate()
 
     var idea = "A" + random_object_descriptor + " " + random_object + " " + random_object_action + " a" + random_object_descriptor2 + " " + random_object2 + " in" + random_place;
     document.getElementById("idea").innerHTML = "<code>"+ idea +"</code>";
+
+    return(idea);
 };
 
 function share()
@@ -78,7 +80,7 @@ function publish()
         },
         title: document.getElementById("title").value,
         url: link,
-        description: "An EPIC random idea generator by " + document.getElementById("username").value + " (" + ID + ")",
+        description: "Example: " + generate()
     }
 
     const params = {
@@ -87,7 +89,8 @@ function publish()
         embeds: [embed]
     };
     
-    request.send(JSON.stringify(params));
+    console.log(JSON.stringify(params));
+    //request.send(JSON.stringify(params));
 
 
     document.getElementById("published").innerText = "Published to https://discord.gg/CTNEqcgV!";
